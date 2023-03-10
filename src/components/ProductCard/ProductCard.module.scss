@@ -1,0 +1,116 @@
+.card {
+    max-width: 37rem;
+    height: 65rem;
+    overflow: hidden;
+    background-color: $white;
+    margin: 2rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:hover .product-info {
+        transform: translateY(-6rem);
+    }
+}
+
+.product-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 37rem;
+    min-height: 49rem;
+    background-color: $pastel-green;
+
+    &__main {
+        max-width: 34rem;
+        max-height: 44rem;
+        object-fit: cover;
+    }
+
+    &__hover {
+        position: absolute;
+        max-width: 37rem;
+        max-height: 49rem;
+        object-fit: contain;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+
+        &--hovered {
+            opacity: 1;
+        }
+    }
+
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1.5rem 2.5rem 1.5rem;
+    height: 16rem;
+    background-color: $white;
+    transition: transform 0.3s ease-in-out;
+
+    &__title {
+        line-height: 0;
+        font-weight: 800;
+        margin-block: 1rem;
+    }
+}
+
+.product-price {
+    display: flex;
+    flex-direction: column;
+    color: $cherry;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-block: 0.5rem;
+
+    &__current {
+        margin-block: 0.5rem;
+    }
+
+    &__previous {
+        color: $grey;
+        margin-block: 0.5rem;
+
+        &--strike {
+            text-decoration: line-through;
+            margin-right: 1rem;
+        }
+    }
+}
+
+.product-color {
+    display: flex;
+    margin-block: 0.5rem;
+
+    &__dot {
+        margin-top: 0.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        margin-right: 1rem;
+    }
+}
+
+.price-change {
+
+    &__text {
+        font-size: 0.8rem;
+        color: $grey;
+        margin-block: 0.5rem;
+        font-weight: 600;
+    }
+}
+
+.product-button {
+    margin-top: auto;
+    margin-block: 1.5rem;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+
+    &--hovered {
+        opacity: 1;
+    }
+}

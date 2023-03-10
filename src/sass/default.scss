@@ -1,0 +1,32 @@
+@font-face {
+    font-family: "Mark Pro";
+    src: local("Mark Pro"),
+        url("../../font/Mark-Pro.ttf") format("truetype");
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Mark Pro", sans-serif;
+    color: $black;
+    background-color: $white;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+button {
+    font-family: "Mark Pro", sans-serif;
+
+}
