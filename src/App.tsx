@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ProductCard from "./components/ProductCard/ProductCard";
+import ProductCard from "./components/molecules/ProductCard/ProductCard";
 
 const product = [
   {

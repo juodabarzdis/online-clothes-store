@@ -1,7 +1,7 @@
 import { useState } from "react";
 import classNames from "classnames";
 import styles from "./ProductCard.module.scss";
-import Button from "./atoms/Button/Button";
+import Button from "../../atoms/Button/Button";
 
 type ProductCardProps = {
   image: string[];
