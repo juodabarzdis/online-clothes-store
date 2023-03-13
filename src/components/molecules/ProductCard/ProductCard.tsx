@@ -64,15 +64,26 @@ const ProductCard = ({
                   </span>
                 ))}
             </div>
+
             <div className={styles["product-color"]}>
               {colors &&
                 colors.map((color, index) => (
                   <div
-                    className={styles["product-color__dot"]}
+                    className={classNames(styles["product-color__dot"], {
+                      [styles["product-color__dot--hovered"]]: isHovered,
+                    })}
                     style={{ backgroundColor: `var(--${color})` }}
                     key={index}
                   />
                 ))}
+
+              <div
+                className={classNames(styles["product-sizes"], {
+                  [styles["product-sizes--hovered"]]: isHovered,
+                })}
+              >
+                Dydžiai: S, M, L.
+              </div>
             </div>
           </div>
           <div className={styles["price-change"]}>
