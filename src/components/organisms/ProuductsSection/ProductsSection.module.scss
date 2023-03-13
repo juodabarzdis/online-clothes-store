@@ -1,6 +1,7 @@
 .products-section {
-    max-width: 930px;
+    max-width: 1920px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-
+    grid-gap: 2rem;
+    margin: 2rem;
 }

@@ -1,10 +1,9 @@
 .card {
     min-width: 23rem;
-    max-width: 37rem;
-    max-height: 65rem;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
     background-color: $white;
-    margin: 2rem;
     position: relative;
 
     &:hover {
@@ -12,7 +11,7 @@
     }
 
     &:hover .product-info {
-        transform: translateY(-6rem);
+        transform: translateY(-4.5rem);
     }
 }
 
@@ -20,14 +19,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 75%;
+    max-height: 59rem;
+    height: 100%;
     background-color: $pastel-green;
     position: relative;
 
     &__main {
         max-width: 90%;
-        max-height: 100%;
     }
 
     &__hover {
@@ -42,14 +40,24 @@
             opacity: 1;
         }
     }
+}
 
+.product-info-wrapper {
+    max-height: 21rem;
+    min-height: 16rem;
+    width: 100%;
+    position: relative;
+    bottom: 0;
 }
 
 .product-info {
+    position: absolute;
+    top: 0;
+    z-index: 10;
     display: flex;
+    width: 100%;
     flex-direction: column;
-    padding: 1.5rem 1.5rem 2.5rem 1.5rem;
-    height: 16rem;
+    padding: 1.5rem;
     background-color: $white;
     transition: transform 0.3s ease-in-out;
 
@@ -107,10 +115,11 @@
 }
 
 .product-button {
-    margin-top: auto;
     margin-block: 1.5rem;
     opacity: 0;
     transition: all 0.3s ease-in-out;
+    background-color: $pastel-green;
+
 
     &--hovered {
         opacity: 1;

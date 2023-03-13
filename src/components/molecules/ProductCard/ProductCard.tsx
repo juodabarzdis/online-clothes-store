@@ -46,47 +46,48 @@ const ProductCard = ({
           alt="product"
         />
       </div>
-      <div className={styles["product-info"]}>
-        <p className={styles["product-info__title"]}>{title}</p>
-        <div className={styles["product-price"]}>
-          <div className={styles["product-price__current"]}>
-            <span>{convertPrice(price)} &euro;</span>
+      <div className={styles["product-info-wrapper"]}>
+        <div className={styles["product-info"]}>
+          <p className={styles["product-info__title"]}>{title}</p>
+          <div className={styles["product-price"]}>
+            <div className={styles["product-price__current"]}>
+              <span>{convertPrice(price)} &euro;</span>
+            </div>
+            <div className={styles["product-price__previous"]}>
+              {prevPrice &&
+                prevPrice.map((price, index) => (
+                  <span
+                    className={styles["product-price__previous--strike"]}
+                    key={index}
+                  >
+                    {convertPrice(price)} &euro;
+                  </span>
+                ))}
+            </div>
+            <div className={styles["product-color"]}>
+              {colors &&
+                colors.map((color, index) => (
+                  <div
+                    className={styles["product-color__dot"]}
+                    style={{ backgroundColor: `var(--${color})` }}
+                    key={index}
+                  />
+                ))}
+            </div>
           </div>
-
-          <div className={styles["product-price__previous"]}>
-            {prevPrice &&
-              prevPrice.map((price, index) => (
-                <span
-                  className={styles["product-price__previous--strike"]}
-                  key={index}
-                >
-                  {convertPrice(price)} &euro;
-                </span>
-              ))}
+          <div className={styles["price-change"]}>
+            <span className={styles["price-change__text"]}>
+              30 dienų geriausia kaina**: 14,90 € (+141%)
+            </span>
           </div>
-          <div className={styles["product-color"]}>
-            {colors &&
-              colors.map((color, index) => (
-                <div
-                  className={styles["product-color__dot"]}
-                  style={{ backgroundColor: `var(--${color})` }}
-                  key={index}
-                />
-              ))}
+          <div
+            className={classNames(
+              styles["product-button"],
+              isHovered && styles["product-button--hovered"]
+            )}
+          >
+            <Button />
           </div>
-        </div>
-        <div className={styles["price-change"]}>
-          <span className={styles["price-change__text"]}>
-            30 dienų geriausia kaina**: 14,90 € (+141%)
-          </span>
-        </div>
-        <div
-          className={classNames(
-            styles["product-button"],
-            isHovered && styles["product-button--hovered"]
-          )}
-        >
-          <Button />
         </div>
       </div>
     </div>
