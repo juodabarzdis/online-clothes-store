@@ -85,11 +85,7 @@ const product = [
   },
 ];
 
-const ProductSectionType = {
-  option: "string",
-};
-
-const ProductsSection = ({ option }) => {
+const ProductsSection = ({ option }: { option: string }) => {
   return (
     <section className={styles["products-section"]}>
       {product.map((product) => (

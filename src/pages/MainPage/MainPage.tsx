@@ -8,8 +8,6 @@ const options = ["Prekės vaizdas", "Peržiūrėti modelį"];
 const Main = () => {
   const [option, setOption] = useState<string>([...options][0]);
 
-  console.log(option);
-
   const handleOptionChange = (option: string) => {
     setOption(option);
   };
