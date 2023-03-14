@@ -45,7 +45,33 @@
             opacity: 1;
         }
     }
+
+    &__discount-overlay {
+        position: absolute;
+        bottom: 2rem;
+        left: 0;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        background-color: $cherry;
+        width: 6rem;
+        height: 2.3rem;
+        padding-right: 1rem;
+        font-size: 1.2rem;
+        line-height: 0;
+        font-weight: bold;
+        color: $white;
+        border-top-right-radius: 0.2rem;
+        border-bottom-right-radius: 0.2rem;
+        transition: all 0.3s ease-in-out;
+
+        &--hovered {
+            opacity: 0;
+        }
+    }
 }
+
+
 
 .product-info-wrapper {
     max-height: 21rem;

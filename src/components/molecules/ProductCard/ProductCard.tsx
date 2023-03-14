@@ -9,6 +9,7 @@ type ProductCardProps = {
   price: number;
   prevPrice?: number[];
   colors: string[];
+  option: string;
 };
 
 const ProductCard = ({
@@ -17,13 +18,12 @@ const ProductCard = ({
   price,
   prevPrice,
   colors,
+  option,
 }: ProductCardProps) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const convertPrice = (price: number) => {
     return price.toFixed(2).replace(".", ",");
   };
-
-  console.log("isHovered", isHovered);
 
   return (
     <div
@@ -33,18 +33,32 @@ const ProductCard = ({
     >
       <div className={styles["product-image"]}>
         <img
-          className={styles["product-image__main"]}
-          src={image[0]}
+          className={classNames(styles["product-image__main"], {
+            [styles["product-image__main--hovered"]]: isHovered,
+            [styles["product-image__main--reverse"]]:
+              option === "Peržiūrėti modelį",
+          })}
+          src={option === "Prekės vaizdas" ? image[0] : image[1]}
           alt="product"
         />
+
         <img
-          className={classNames(
-            styles["product-image__hover"],
-            isHovered && styles["product-image__hover--hovered"]
-          )}
-          src={image[1]}
+          className={classNames(styles["product-image__hover"], {
+            [styles["product-image__hover--hovered"]]: isHovered,
+            [styles["product-image__hover--reverse"]]:
+              option === "Peržiūrėti modelį",
+          })}
+          src={option === "Prekės vaizdas" ? image[1] : image[0]}
           alt="product"
         />
+
+        <div
+          className={classNames(styles["product-image__discount-overlay"], {
+            [styles["product-image__discount-overlay--hovered"]]: isHovered,
+          })}
+        >
+          -20%
+        </div>
       </div>
       <div className={styles["product-info-wrapper"]}>
         <div className={styles["product-info"]}>
@@ -82,7 +96,7 @@ const ProductCard = ({
                   [styles["product-sizes--hovered"]]: isHovered,
                 })}
               >
-                Dydžiai: S, M, L.
+                Galimi dydžiai: S, M, L.
               </div>
             </div>
           </div>
